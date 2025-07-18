@@ -4,7 +4,7 @@ import streamlit as st
 import numpy as np
 import pickle
 
-with open('C:/Users/prudh/OneDrive/Desktop/Machine Learning/Projects/Credit Card Fraud Detection/credit_fraud_model_fixed.pkl', 'rb') as file:
+with open('credit_fraud_model_fixed.pkl', 'rb') as file:
     model = pickle.load(file)
 
 st.set_page_config(page_title="Credit Card Fraud Detector", layout="centered")
