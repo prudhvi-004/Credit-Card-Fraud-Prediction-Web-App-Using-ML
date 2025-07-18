@@ -2,19 +2,19 @@
 
 import streamlit as st
 import numpy as np
-import pickle
+import joblib 
 
-with open('credit_fraud_model_fixed.pkl', 'rb') as file:
-    model = pickle.load(file)
+model = joblib.load('credit_fraud_model_fixed.joblib')
 
 st.set_page_config(page_title="Credit Card Fraud Detector", layout="centered")
 st.title("💳 Credit Card Fraud Detection")
 
 st.subheader("Enter transaction details")
 
+# Feature names
 feature_names = ['Time'] + [f'V{i}' for i in range(1, 29)] + ['Amount']
 
-
+# Input fields
 input_values = []
 for feature in feature_names:
     val = st.number_input(f"{feature}", format="%.6f")
